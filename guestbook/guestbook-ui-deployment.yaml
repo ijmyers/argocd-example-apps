@@ -16,8 +16,8 @@ spec:
         app: tipapp
     spec:
       containers:
-      - image: tip-front-end:latest
+      - image: registry.il2.dsop.io/skicamp/project-opal/tip-front-end:3d522f91
         name: tipapp
-        imagePullPolicy: Never
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000
