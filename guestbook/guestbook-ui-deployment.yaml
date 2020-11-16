@@ -1,20 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: guestbook-ui
+  name: tip-app-deployment
+  labels:
+    app: TIPApp
 spec:
   replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: guestbook-ui
+      app: TIPApp
   template:
     metadata:
       labels:
-        app: guestbook-ui
+        app: TIPApp
     spec:
       containers:
-      - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
-        name: guestbook-ui
+      - image: registry.il2.dsop.io/skicamp/project-opal/tip-front-end:3d522f91
+        name: TIPApp
         ports:
-        - containerPort: 80
+        - containerPort: 3000
