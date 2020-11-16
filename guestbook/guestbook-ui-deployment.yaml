@@ -3,20 +3,20 @@ kind: Deployment
 metadata:
   name: tip-app-deployment
   labels:
-    app: TIPApp
+    app: tipapp
 spec:
   replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: TIPApp
+      app: tipapp
   template:
     metadata:
       labels:
-        app: TIPApp
+        app: tipapp
     spec:
       containers:
       - image: registry.il2.dsop.io/skicamp/project-opal/tip-front-end:3d522f91
-        name: TIPApp
+        name: tipapp
         ports:
         - containerPort: 3000
